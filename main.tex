@@ -1,6 +1,22 @@
 \documentclass[12pt, letterpaper]{article}
-\usepackage{graphicx} %LaTeX package to import graphics
+\usepackage{graphicx} % LaTeX package to import graphics
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tocloft} % allows to customize the contents page
+\usepackage{hyperref} % makes content entries clickable
+\hypersetup{hidelinks}
 \graphicspath{{images/}}
+
+
+% -- Numbering generator for sections and subsections --
+\renewcommand{\thesection}{\arabic{section}.0}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+
+% -- Contents page styling --
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}   % dots for sections too
+\setlength{\cftsecnumwidth}{2.5em}    % room for "1.0"
+\setlength{\cftsubsecnumwidth}{3em}   % room for "4.10"
+
 
 \begin{document}
 % Title page environment replaces the \maketitle
@@ -37,4 +53,28 @@
     {\large October 2026\par}
 
 \end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{INTRODUCTION}
+\section{TURBULENCE AND THE NEED FOR MODELING}
+
+\section{CLASSIFICATION OF TURBULENCE MODELS}
+
+\section{DESCRIPTION OF TURBULENCE MODELS}
+\subsection{Prandtl's Mixing Length Model}
+\subsection{Spalart--Allmaras Model}
+\subsection{Standard $k$--$\varepsilon$ Model}
+\subsection{RNG $k$--$\varepsilon$ Model}
+\subsection{Realizable $k$--$\varepsilon$ Model}
+\subsection{Standard $k$--$\omega$ Model}
+\subsection{SST (Shear Stress Transport) $k$--$\omega$ Model}
+\subsection{Reynolds Stress Model (RSM)}
+\subsection{Smagorinsky LES Model}
+\subsection{Dynamic Smagorinsky Model}
+\subsection{Detached Eddy Simulation (DES)}
+\subsection{Scale-Adaptive Simulation (SAS) Model}
+
+\section{COMPARISON OF TURBULENCE MODELS}
 \end{document}
